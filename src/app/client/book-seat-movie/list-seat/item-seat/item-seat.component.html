@@ -1,0 +1,8 @@
+<button
+  class="btn seat"
+  [disabled]="seat.trangThai"
+  [ngClass]="{ seatChosing: statusSeatBooked, setBooked: seat.trangThai }"
+  (click)="seatBooked()"
+>
+  {{ seat.soGhe }}
+</button>

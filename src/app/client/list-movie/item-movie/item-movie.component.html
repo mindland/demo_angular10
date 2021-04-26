@@ -1,0 +1,20 @@
+<div class="card">
+  <img class="card-img-top" [src]="movie.hinhAnh" alt="" />
+  <div class="card-body">
+    <h4 class="card-title">{{ movie.tenPhim }}</h4>
+    <p class="card-text">{{ movie.moTa | shortCut: 20}}</p>
+  </div>
+  <button class="btn btn-success" (click)="navigateDetailMovie()">
+    Chi tiết phim
+  </button>
+  <a
+    class="btn btn-primary"
+    routerLink="/client/detail-movie"
+    [queryParams]="{ tenPhim: movie.tenPhim, maPhim: movie.maPhim }"
+    >Chi tiet phim truyen nhieu param</a
+  >
+  <button class="btn btn-info" (click)="likeMovie()">Like</button>
+  <button class="btn btn-info" data-toggle="modal" data-target="#modelId" (click)="seeModalComponent()">Demo Behavior component</button>
+</div>
+
+<!-- Phai co dau /client neu khong co se hieu la cong chuoi -->

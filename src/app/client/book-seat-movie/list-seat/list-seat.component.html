@@ -1,0 +1,16 @@
+<p style="font-size: 18px">Sơ đồ ghế ngồi</p>
+<div class="row">
+  <div class="col-sm-6" >
+    <ng-container *ngFor="let item of listSeat; let index = index">
+      <app-item-seat [seat]="item" (eventSeat)="changeStatusSeat($event)"></app-item-seat>
+      <br *ngIf="(index + 1) % 4 === 0" />
+    </ng-container >
+  </div>
+  <div class="col-sm-3">
+    <!-- Danh sach ghe đưuọc chọn -->
+    <p *ngFor="let seatBooked of listSeatBooked; let index = index">
+      Ghế: {{ seatBooked.tenGhe }} ${{ seatBooked.gia }}
+    </p>
+
+  </div>
+</div>

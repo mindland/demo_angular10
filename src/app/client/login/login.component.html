@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label>Tài khoản</label>
+          <input type="text" class="form-control" formControlName="account" />
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" class="form-control" formControlName="password"/>
+          <div
+          class="alert alert-danger"
+          *ngIf="
+          loginForm.controls.password?.touched &&
+          loginForm.controls.password?.errors
+          "
+        >
+          <div
+            *ngIf="loginForm.controls.password.errors.required"
+            class="text text-danger"
+          >
+            Mật khẩu không được trống rỗng
+          </div>
+          <div
+            *ngIf="loginForm.controls.password.errors.minlength"
+            class="text text-danger"
+          >
+            Mật khẩu không được dưới 6 kí tự
+          </div>
+        </div>
+        </div>
+        <div class="form-group">
+          <button type="submit">Đăng nhập</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<p>list-movie works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let item of listMovie">
+      <!-- begin item  -->
+      <app-item-movie
+        [movie]="item"
+        (likeEvent)="countLikeMovie($event)"
+      ></app-item-movie>
+      <!-- end item  -->
+      <!-- $event tượng trưng cho những cái thằng con truyền qua  -->
+    </div>
+
+    <button class="btn btn-info" (click)="changePriceAllMovie()">
+      Demo view all children
+    </button>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Danh sach like</h3>
+      <!-- <p *ngFor="let itemLikeMovie of listMovie">
+        {{ itemLikeMovie.name }} - {{ itemLikeMovie.totalLike }}
+      </p> -->
+    </div>
+  </div>
+</div>

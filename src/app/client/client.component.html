@@ -1,0 +1,47 @@
+<p>client works!</p>
+<!-- <app-list-movie></app-list-movie> -->
+<!-- <app-book-seat-movie></app-book-seat-movie> -->
+
+<app-navbar-client></app-navbar-client>
+<router-outlet></router-outlet>
+
+<div class="container">
+  <h3>Thêm phim</h3>
+  <div class="row">
+    <mat-form-field>
+      <mat-label for="usr">Mã phim:</mat-label>
+      <input matInput type="text" #maPhim />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="usr">Tên phim:</mat-label>
+      <input matInput type="text" #tenPhim />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="usr">Giá phim:</mat-label>
+      <input matInput type="text" #giaPhim />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="usr">Ảnh đại diện:</mat-label>
+      <input matInput type="text" #anhPhim />
+    </mat-form-field>
+
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="
+          addMovie(maPhim.value, tenPhim.value, giaPhim.value, anhPhim.value)
+        "
+      >
+        Thêm phim
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- dấu thăng tên của 1 biến nào đó : template variavble  -->
+
+

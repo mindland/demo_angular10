@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Chuyen doi chu hoa thanh chu thuong:</h3>
+  {{ title | lowercase }}
+  <h3>Chuyen doi chu thuong thanh hoa :</h3>
+  {{ title | uppercase }}
+  <h3>Định dạng ngày thánh năm</h3>
+  format: dd/MM/yyyy {{ ngay | date: "dd/MM/yyyy" }} <br />
+
+  <h3>Giá tiền</h3>
+  {{ giaTien | number: "3.2-3" }}
+</div>

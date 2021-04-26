@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <img [src]="detailMovie?.hinhAnh" />
+    </div>
+    <div class="col-8">
+      <div class="row">
+        <div class="col-12">
+          <p>Tên phim : {{ detailMovie?.tenPhim }}</p>
+        </div>
+        <div class="col-12">
+          <p>Mô tả: {{ detailMovie?.moTa }}</p>
+        </div>
+        <div class="col-12">
+          <p>Ngày khởi chiếu: {{ detailMovie?.ngayKhoiChieu }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <p>Du lieu lay tu params</p>
+      <p>ten phim: {{ nameMovie }}</p>
+      <p>id phim: {{ idMovie }}</p>
+    </div>
+  </div>
+</div>

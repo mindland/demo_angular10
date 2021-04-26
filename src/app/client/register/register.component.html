@@ -1,0 +1,83 @@
+<div class="container">
+  <h3>Đăng ký tài khoản</h3>
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <div class="form-group">
+      <span>Tài khoản</span>
+      <input
+        class="form-control"
+        name="account"
+        [(ngModel)]="objectDefaltAccount.account"
+      />
+    </div>
+    <div class="form-group">
+      <span>Mật khẩu</span>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+        #passwordControl="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+        passwordControl?.touched &&
+        passwordControl?.errors
+        "
+      >
+        <div
+          *ngIf="passwordControl.errors.required"
+          class="text text-danger"
+        >
+          Mật khẩu không được trống rỗng
+        </div>
+        <div
+          *ngIf="registerForm.controls.password.errors.minlength"
+          class="text text-danger"
+        >
+          Mật khẩu không được dưới 6 kí tự
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <span>Email</span>
+      <input
+        class="form-control"
+        name="email"
+        [(ngModel)]="objectDefaltAccount.email"
+      />
+    </div>
+    <div class="form-group">
+      <span>Họ tên</span>
+      <input class="form-control" name="name" ngModel />
+    </div>
+    <div class="form-group">
+      <span>Số điện thoại</span>
+      <input class="form-control" name="phone" ngModel />
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="registerForm.invalid">Đăng ký</button>
+  </form>
+
+  <table class="table">
+    <thead>
+      <th>Tài khoản</th>
+      <th>Họ tên</th>
+      <th>Email</th>
+      <th>Số điện thoại</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of registerList">
+        <td>{{ user.account }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td><button>Chỉnh sửa</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Form control , form model-->
